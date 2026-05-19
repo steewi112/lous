@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Showroom Motor Sport</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,10 +21,12 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
   <header class="bg-black p-5 shadow-lg">
+
     <h1 class="text-4xl font-bold text-center text-red-500">
       SHOWROOM MOTOR SPORT
     </h1>
@@ -31,6 +34,7 @@
     <p class="text-center text-gray-300 mt-2">
       Penjualan Motor Sport Terbaik
     </p>
+
   </header>
 
   <!-- LIST MOTOR -->
@@ -40,6 +44,7 @@
 
       <!-- MOTOR 1 -->
       <div class="card bg-slate-800 rounded-2xl overflow-hidden shadow-lg">
+
         <img
           src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop"
           class="w-full h-52 object-cover"
@@ -80,10 +85,12 @@
           </div>
 
         </div>
+
       </div>
 
       <!-- MOTOR 2 -->
       <div class="card bg-slate-800 rounded-2xl overflow-hidden shadow-lg">
+
         <img
           src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?q=80&w=1200&auto=format&fit=crop"
           class="w-full h-52 object-cover"
@@ -124,10 +131,12 @@
           </div>
 
         </div>
+
       </div>
 
       <!-- MOTOR 3 -->
       <div class="card bg-slate-800 rounded-2xl overflow-hidden shadow-lg">
+
         <img
           src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1200&auto=format&fit=crop"
           class="w-full h-52 object-cover"
@@ -168,6 +177,7 @@
           </div>
 
         </div>
+
       </div>
 
     </div>
@@ -229,6 +239,7 @@
       }).format(angka);
     }
 
+    // BELI MOTOR
     function beliMotor(button){
 
       const card = button.closest(".card");
@@ -261,16 +272,27 @@
 
       row.innerHTML = `
         <td class="p-3">${namaMotor}</td>
+
         <td class="p-3">${hargaText}</td>
+
         <td class="p-3">${pembeli}</td>
 
-        <td class="p-3">
+        <td class="p-3 flex gap-2">
+
           <button
             onclick="editData(this)"
             class="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded"
           >
             Edit
           </button>
+
+          <button
+            onclick="hapusData(this, ${angkaHarga})"
+            class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+          >
+            Hapus
+          </button>
+
         </td>
       `;
 
@@ -315,14 +337,9 @@
 
       const row = button.closest("tr");
 
-      const namaMotor =
-        row.children[0];
-
-      const harga =
-        row.children[1];
-
-      const pembeli =
-        row.children[2];
+      const namaMotor = row.children[0];
+      const harga = row.children[1];
+      const pembeli = row.children[2];
 
       const newMotor =
         prompt("Edit nama motor:", namaMotor.innerText);
@@ -344,6 +361,19 @@
       if(newPembeli){
         pembeli.innerText = newPembeli;
       }
+    }
+
+    // HAPUS DATA
+    function hapusData(button, harga){
+
+      const row = button.closest("tr");
+
+      total -= harga;
+
+      document.getElementById("totalHarga").innerText =
+        formatRupiah(total);
+
+      row.remove();
     }
 
   </script>
