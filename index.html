@@ -1,259 +1,266 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Showroom Motor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Showroom Motor Sport</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body{
-      background:#f3f4f6;
-      font-family:Arial, sans-serif;
-    }
-
-    .card{
-      transition:0.3s;
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
     }
 
     .card:hover{
-      transform:translateY(-5px);
+      transform: translateY(-5px);
+      transition: 0.3s;
     }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
-  <header class="bg-black text-white py-6 shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-      <h1 class="text-3xl font-bold">
-        Showroom Motor
-      </h1>
-
-      <p class="text-gray-300">
-        Data Penjualan Motor
-      </p>
-    </div>
+  <header class="bg-black shadow-lg p-5">
+    <h1 class="text-3xl font-bold text-center text-red-500">
+      SHOWROOM MOTOR SPORT
+    </h1>
+    <p class="text-center text-gray-300 mt-2">
+      Penjualan Motor Sport Terbaru
+    </p>
   </header>
 
-  <!-- FORM -->
-  <section class="max-w-7xl mx-auto px-6 mt-10">
+  <!-- LIST MOTOR -->
+  <section class="max-w-7xl mx-auto p-6">
 
-    <div class="bg-white p-8 rounded-3xl shadow-lg">
+    <div class="grid md:grid-cols-3 gap-6">
 
-      <h2 class="text-2xl font-bold mb-6">
-        Tambah Data Pembeli
-      </h2>
-
-      <div class="grid md:grid-cols-4 gap-4">
-
-        <input
-          type="text"
-          id="namaPembeli"
-          placeholder="Nama Pembeli"
-          class="border p-4 rounded-xl outline-none focus:ring-2 focus:ring-black"
+      <!-- MOTOR 1 -->
+      <div class="card bg-slate-800 rounded-2xl overflow-hidden shadow-lg">
+        <img 
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-52 object-cover"
         >
 
-        <input
-          type="text"
-          id="namaMotor"
-          placeholder="Nama Motor"
-          class="border p-4 rounded-xl outline-none focus:ring-2 focus:ring-black"
+        <div class="p-5">
+          <h2 class="text-2xl font-bold">Kawasaki Ninja ZX-25R</h2>
+          <p class="text-gray-300 mt-2">
+            Motor sport 250cc dengan desain racing modern.
+          </p>
+
+          <p class="text-green-400 text-2xl font-bold mt-4">
+            Rp 105.000.000
+          </p>
+
+          <input 
+            type="text"
+            placeholder="Nama Pembeli"
+            id="buyer1"
+            class="w-full mt-4 p-3 rounded-lg bg-slate-700"
+          >
+
+          <div class="flex gap-3 mt-4">
+            <button 
+              onclick="beliMotor('Kawasaki Ninja ZX-25R', 105000000, 'buyer1')"
+              class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg w-full"
+            >
+              Beli
+            </button>
+
+            <button 
+              onclick="editMotor(this)"
+              class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOTOR 2 -->
+      <div class="card bg-slate-800 rounded-2xl overflow-hidden shadow-lg">
+        <img 
+          src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-52 object-cover"
         >
 
-        <input
-          type="number"
-          id="hargaMotor"
-          placeholder="Harga Motor"
-          class="border p-4 rounded-xl outline-none focus:ring-2 focus:ring-black"
+        <div class="p-5">
+          <h2 class="text-2xl font-bold">Yamaha R15</h2>
+
+          <p class="text-gray-300 mt-2">
+            Motor sport stylish dengan performa tinggi.
+          </p>
+
+          <p class="text-green-400 text-2xl font-bold mt-4">
+            Rp 45.000.000
+          </p>
+
+          <input 
+            type="text"
+            placeholder="Nama Pembeli"
+            id="buyer2"
+            class="w-full mt-4 p-3 rounded-lg bg-slate-700"
+          >
+
+          <div class="flex gap-3 mt-4">
+            <button 
+              onclick="beliMotor('Yamaha R15', 45000000, 'buyer2')"
+              class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg w-full"
+            >
+              Beli
+            </button>
+
+            <button 
+              onclick="editMotor(this)"
+              class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOTOR 3 -->
+      <div class="card bg-slate-800 rounded-2xl overflow-hidden shadow-lg">
+        <img 
+          src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1200&auto=format&fit=crop"
+          class="w-full h-52 object-cover"
         >
 
-        <button
-          onclick="tambahData()"
-          class="bg-black text-white rounded-xl hover:scale-105 transition"
-        >
-          Tambah Data
-        </button>
+        <div class="p-5">
+          <h2 class="text-2xl font-bold">Honda CBR250RR</h2>
 
+          <p class="text-gray-300 mt-2">
+            Motor sport premium dengan mesin bertenaga.
+          </p>
+
+          <p class="text-green-400 text-2xl font-bold mt-4">
+            Rp 75.000.000
+          </p>
+
+          <input 
+            type="text"
+            placeholder="Nama Pembeli"
+            id="buyer3"
+            class="w-full mt-4 p-3 rounded-lg bg-slate-700"
+          >
+
+          <div class="flex gap-3 mt-4">
+            <button 
+              onclick="beliMotor('Honda CBR250RR', 75000000, 'buyer3')"
+              class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg w-full"
+            >
+              Beli
+            </button>
+
+            <button 
+              onclick="editMotor(this)"
+              class="bg-yellow-500 hover:bg-yellow-600 px-4 py-2 rounded-lg"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
       </div>
 
     </div>
 
   </section>
 
-  <!-- TABLE -->
-  <section class="max-w-7xl mx-auto px-6 mt-10 mb-20">
+  <!-- DATA PEMBELIAN -->
+  <section class="max-w-6xl mx-auto p-6">
 
-    <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+    <div class="bg-slate-800 rounded-2xl p-5 shadow-lg">
+      <h2 class="text-2xl font-bold mb-4 text-red-400">
+        Data Pembelian
+      </h2>
 
       <div class="overflow-x-auto">
-
-        <table class="w-full">
-
-          <thead class="bg-black text-white">
-
-            <tr>
-              <th class="p-5 text-left">No</th>
-              <th class="p-5 text-left">Nama Pembeli</th>
-              <th class="p-5 text-left">Nama Motor</th>
-              <th class="p-5 text-left">Harga</th>
-              <th class="p-5 text-center">Aksi</th>
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-gray-600">
+              <th class="p-3">Motor</th>
+              <th class="p-3">Harga</th>
+              <th class="p-3">Pembeli</th>
             </tr>
-
           </thead>
 
-          <tbody id="tableData">
+          <tbody id="tableBody">
 
           </tbody>
-
         </table>
-
       </div>
 
       <!-- TOTAL -->
-      <div class="bg-gray-100 p-6 flex justify-between items-center">
-
-        <h3 class="text-2xl font-bold">
-          Total Penjualan
+      <div class="mt-6 text-right">
+        <h3 class="text-2xl font-bold text-green-400">
+          Total Penjualan:
+          <span id="totalHarga">Rp 0</span>
         </h3>
-
-        <p id="totalHarga" class="text-2xl font-bold text-green-600">
-          Rp 0
-        </p>
-
       </div>
-
     </div>
 
   </section>
 
   <script>
-
-    let dataMotor = [];
-    let editIndex = -1;
+    let total = 0;
 
     function formatRupiah(angka){
-      return "Rp " + Number(angka).toLocaleString("id-ID");
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR'
+      }).format(angka);
     }
 
-    function tambahData(){
+    function beliMotor(namaMotor, harga, inputId){
 
-      const namaPembeli = document.getElementById("namaPembeli").value;
-      const namaMotor = document.getElementById("namaMotor").value;
-      const hargaMotor = document.getElementById("hargaMotor").value;
+      const buyer = document.getElementById(inputId).value;
 
-      if(
-        namaPembeli === "" ||
-        namaMotor === "" ||
-        hargaMotor === ""
-      ){
-        alert("Isi semua data!");
+      if(buyer === ""){
+        alert("Masukkan nama pembeli!");
         return;
       }
 
-      const data = {
-        pembeli:namaPembeli,
-        motor:namaMotor,
-        harga:hargaMotor
-      };
+      const table = document.getElementById("tableBody");
 
-      if(editIndex === -1){
-        dataMotor.push(data);
-      }else{
-        dataMotor[editIndex] = data;
-        editIndex = -1;
-      }
+      const row = `
+        <tr class="border-b border-gray-700">
+          <td class="p-3">${namaMotor}</td>
+          <td class="p-3">${formatRupiah(harga)}</td>
+          <td class="p-3">${buyer}</td>
+        </tr>
+      `;
 
-      tampilkanData();
+      table.innerHTML += row;
 
-      document.getElementById("namaPembeli").value = "";
-      document.getElementById("namaMotor").value = "";
-      document.getElementById("hargaMotor").value = "";
+      total += harga;
 
-    }
-
-    function tampilkanData(){
-
-      const table = document.getElementById("tableData");
-
-      table.innerHTML = "";
-
-      let total = 0;
-
-      dataMotor.forEach((item,index)=>{
-
-        total += Number(item.harga);
-
-        table.innerHTML += `
-          <tr class="border-b hover:bg-gray-50">
-
-            <td class="p-5">${index + 1}</td>
-
-            <td class="p-5">
-              ${item.pembeli}
-            </td>
-
-            <td class="p-5">
-              ${item.motor}
-            </td>
-
-            <td class="p-5 text-green-600 font-semibold">
-              ${formatRupiah(item.harga)}
-            </td>
-
-            <td class="p-5 text-center space-x-2">
-
-              <button
-                onclick="editData(${index})"
-                class="bg-yellow-400 px-4 py-2 rounded-lg hover:scale-105 transition"
-              >
-                Edit
-              </button>
-
-              <button
-                onclick="hapusData(${index})"
-                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:scale-105 transition"
-              >
-                Hapus
-              </button>
-
-            </td>
-
-          </tr>
-        `;
-      });
-
-      document.getElementById("totalHarga").innerHTML =
+      document.getElementById("totalHarga").innerText =
         formatRupiah(total);
 
+      document.getElementById(inputId).value = "";
     }
 
-    function editData(index){
+    function editMotor(button){
 
-      const data = dataMotor[index];
+      const card = button.closest(".card");
 
-      document.getElementById("namaPembeli").value =
-        data.pembeli;
+      const title = card.querySelector("h2");
+      const harga = card.querySelector(".text-green-400");
 
-      document.getElementById("namaMotor").value =
-        data.motor;
+      const newTitle = prompt("Edit nama motor:", title.innerText);
+      const newHarga = prompt("Edit harga motor:", harga.innerText);
 
-      document.getElementById("hargaMotor").value =
-        data.harga;
+      if(newTitle){
+        title.innerText = newTitle;
+      }
 
-      editIndex = index;
-
+      if(newHarga){
+        harga.innerText = newHarga;
+      }
     }
-
-    function hapusData(index){
-
-      dataMotor.splice(index,1);
-
-      tampilkanData();
-
-    }
-
   </script>
 
 </body>
